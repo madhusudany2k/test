@@ -1,0 +1,13 @@
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: Install Web Server
+      yum:
+        name: httpd
+        state: latest
+        
+    - name: Start Web Server
+      yum:
+        name: httpd
+        state: running
+        enable: yes
